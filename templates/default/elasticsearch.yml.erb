@@ -8,6 +8,13 @@ node.name:    '<%= node.elasticsearch[:node_name]    %>'
 index.number_of_shards:   <%= node.elasticsearch[:index_shards]   %>
 index.number_of_replicas: <%= node.elasticsearch[:index_replicas] %>
 
+index:
+  analysis:
+    analyer:
+      keyword_lowercase:
+        tokenizer: keyword
+        filter: lowercase
+
 #################################### Paths ####################################
 
 path.data: <%= node.elasticsearch[:data_path] %>
